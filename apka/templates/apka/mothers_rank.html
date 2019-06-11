@@ -5,12 +5,11 @@
 <!-- core style only -->
 <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
 
-
-<!-- @TODO SKONFIGUROWAC STATICI BO CZCIONKA JEST ZŁA -->
+{% load static %}
 <style type = "text/css">
   @font-face {
 	  font-family: "kongtext";
-	  src: url("kongtext.ttf");
+	  src: url("static/kongtext.ttf");
   }
   th, td {
 	  font-family: kongtext;
@@ -20,7 +19,7 @@
  </style>
 
 <center>
-	<th>Ranking matek patologicznych</th> </br>
+	<th>Ranking matek patologicznych</th> </br></br>
 <div class="nes-table-responsive">
   <table class="nes-table is-bordered is-centered">
     <thead>
