@@ -1,3 +1,46 @@
-{% for mother in mothers %}
-    {{ mother.points }}
-{% endfor %}
+<!-- minify -->
+<link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+<!-- latest -->
+<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+<!-- core style only -->
+<link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+
+
+<!-- @TODO SKONFIGUROWAC STATICI BO CZCIONKA JEST ZŁA -->
+<style type = "text/css">
+  @font-face {
+	  font-family: "kongtext";
+	  src: url("kongtext.ttf");
+  }
+  th, td {
+	  font-family: kongtext;
+	  font-size: 80%;
+  }
+
+ </style>
+
+<center>
+	<th>Ranking matek patologicznych</th> </br>
+<div class="nes-table-responsive">
+  <table class="nes-table is-bordered is-centered">
+    <thead>
+      <tr>
+        <th>Imie </th>
+        <th>Nazwisko </th>
+        <th>Ile dzieci</th>
+        <th>Ile punktow</th>
+      </tr>
+    </thead>
+    <tbody>
+    	{% for mother in mothers %}
+      <tr>
+        <td>{{  mother.firstName }} </td>
+        <td>{{  mother.secondName }}</td>
+        <td>{{  mother.childs }}</td>
+        <td>{{  mother.points }}</td>
+      </tr>
+         {% endfor %}
+    </tbody>
+  </table>
+</div>
+</center>
