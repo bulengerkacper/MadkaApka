@@ -7,7 +7,6 @@ class Mother(models.Model):
 	firstName = models.CharField(max_length=50)
 	secondName = models.CharField(max_length=50)
 	age = models.IntegerField()
-	#childrens = models.IntegerField()
 	money = models.FloatField(default=0)
 	patoFace = models.ImageField(upload_to ='pic_folder/', default = 'pic_folder/None/no-img.jpg' )
 	points = models.IntegerField(default=0)
@@ -17,7 +16,14 @@ class Mother(models.Model):
 
 	def getChildrenCount(self):
 		childrens = Child.objects.filter(mother=self).count()
-		print (childrens)
+		return childrens
+
+	def listChildren(self):
+		children = Child.objects.filter(mother=self)
+		# for child in children:
+		# 	print (child.firstName)
+		# 	print (child.secondName)
+		return children
 
 class Child(models.Model):
 	id = models.AutoField(primary_key=True)

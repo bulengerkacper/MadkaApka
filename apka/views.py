@@ -11,6 +11,7 @@ def mothers_rank(request):
 	for mom in mothers:
 		a=mom.getChildrenCount()
 		print(a)
+		mom.listChildren()
 	return render (request, 'apka/mothers_rank.html', {'mothers':mothers})
 
 # Create your views here.
