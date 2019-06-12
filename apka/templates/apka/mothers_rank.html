@@ -5,42 +5,37 @@
 <!-- core style only -->
 <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
 
+{% extends 'apka/template.html' %}
 {% load static %}
-<style type = "text/css">
-  @font-face {
-	  font-family: "kongtext";
-	  src: url("static/kongtext.ttf");
-  }
-  th, td, upside {
-	  font-family: kongtext;
-	  font-size: 80%;
-  }
 
- </style>
 
-<center>
 
-<div class="nes-table-responsive">
-  <table class="nes-table is-bordered is-centered">
-    <thead>
-       <upside>Ranking matek patologicznych</upside>
-      <tr>
-        <th>Imie </th>
-        <th>Nazwisko </th>
-        <th>Ile dzieci</th>
-        <th>Ile punktow</th>
-      </tr>
-    </thead>
-    <tbody>
-    	{% for mother in mothers %}
-      <tr>
-        <td>{{  mother.firstName }} </td>
-        <td>{{  mother.secondName }}</td>
-        <td>{{  mother.childs }}</td>
-        <td>{{  mother.points }}</td>
-      </tr>
-         {% endfor %}
-    </tbody>
-  </table>
-</div>
-</center>
+{% block content %}
+</br></br>
+	<center>
+	<div class="nes-table-responsive">
+	  <table class="nes-table is-bordered is-centered">
+	    <thead>
+	       <upside>Ranking matek patologicznych</upside>
+	      <tr>
+	        <th>Imie </th>
+	        <th>Nazwisko </th>
+	        <th>Ile dzieci</th>
+	        <th>Ile punktow</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for mother in mothers %}
+	      <tr>
+	        <td>{{  mother.firstName }} </td>
+	        <td>{{  mother.secondName }}</td>
+	        <td>{{  mother.getChildrenCount }}</td>
+	        <td>{{  mother.points }}</td>
+	      </tr>
+	         {% endfor %}
+	    </tbody>
+	  </table>
+	</div>
+	</center>
+
+{% endblock %}
