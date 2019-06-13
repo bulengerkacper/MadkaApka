@@ -27,8 +27,8 @@ DEBUG = True
 TIME_ZONE = 'Europe/Warsaw'
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
-
-
+MEDIA_URL = '/pic_folder/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pic_folder')
 # Application definition
 
 INSTALLED_APPS = [

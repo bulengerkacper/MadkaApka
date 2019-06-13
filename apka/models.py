@@ -8,7 +8,7 @@ class Mother(models.Model):
 	secondName = models.CharField(max_length=50)
 	age = models.IntegerField()
 	money = models.FloatField(default=0)
-	patoFace = models.ImageField(upload_to ='pic_folder/', default = 'pic_folder/None/no-img.jpg' )
+	patoFace = models.ImageField(upload_to ='pic_folder/', default = 'pic_folder/no-img.jpg' )
 	points = models.IntegerField(default=0)
 	
 	def __str__(self):

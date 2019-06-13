@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Mother
 from .models import Child
 
@@ -14,4 +14,7 @@ def mothers_rank(request):
 		mom.listChildren()
 	return render (request, 'apka/mothers_rank.html', {'mothers':mothers})
 
+def mother_detail(request, id):
+	mother = get_object_or_404(Mother, id=id)
+	return render(request, 'apka/mother_detail.html', {'mother':mother})
 # Create your views here.
