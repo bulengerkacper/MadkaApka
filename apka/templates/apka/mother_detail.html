@@ -10,13 +10,14 @@
 {% block content %}
 
 <center>
-			  	<img src="../pic_folder/{{mother.patoFace}}" alt="Madka" class="responsive"></br>
-				<karina>
-			    Imie {{  mother.firstName }} </br>
-			    Nazwisko {{  mother.secondName }} </br>
-			    Ile dzieci {{  mother.getChildrenCount }} </br>
-			    Ile punktow {{  mother.points }} </br>
-				</karina>
+			  	<img src="../pic_folder/{{mother.patoFace}}" alt="Madka" class="responsive"></br></br>
 </center>
+				<karina>
+			    Imie: {{  mother.firstName }} </br>
+			    Nazwisko: {{  mother.secondName }} </br>
+			    Ile dzieci {{  mother.getChildrenCount }} </br>
+			    Ile punktow: {{  mother.points }} </br>
+				</karina>
+
 
 {% endblock %}
