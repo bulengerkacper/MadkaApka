@@ -1,0 +1,65 @@
+<link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+<!-- latest -->
+<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+<!-- core style only -->
+<link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+{% load static %}
+
+
+<style type = "text/css">
+	@font-face {
+	  font-family: "kongtext";
+	  src: url("static/kongtext.ttf");
+	}
+
+	th, td, upside, button, span, li {
+	  font-family: kongtext;
+	  font-size: 80%;
+	}
+
+ 	header {
+	  left: 40%;
+	  font-family: kongtext;
+	  font-size: 170%;
+ 	}
+
+	downside {
+  	  position: fixed;
+	  font-family: kongtext;
+	  font-size: 60%;
+	  bottom: 10%;
+	  left: 40%;
+ 	}
+
+	karina {
+  	  font-family: kongtext;
+	  font-size: 120%;
+	  text-align: justify;
+  }
+</style>
+
+
+<!-- <div class="nes-container is-dark with-title">
+  <p class="title">MadkaApka</p>
+  <p>Witaj. Stworz swojego p(at)otwora</p>
+</div> -->
+
+			<center>
+				<header><span class="nes-text is-error">MadkaApka</span></header>
+				<a href=/home>
+				<button type="button"  class="nes-btn is-error">HOME</button>
+				</a>
+
+				<a href=/actions>
+				<button type="button"  class="nes-btn is-error">ACTIONS</button>
+				</a>
+
+				<a href=/logout>
+				<button type="button"  class="nes-btn is-error">LOGOUT</button>
+				</a>
+			</center>
+
+{% block content %}
+{% endblock %}
+
+<downside>All rigths reserved BulengerK 2019</downside>

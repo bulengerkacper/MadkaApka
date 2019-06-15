@@ -1,0 +1,22 @@
+<!-- minify -->
+<link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+<!-- latest -->
+<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+<!-- core style only -->
+<link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+
+{% extends 'apka/template.html' %}
+
+{% block content %}
+
+<center>
+			  	<img src="../pic_folder/{{mother.patoFace}}" alt="Madka" class="responsive"></br>
+				<karina>
+			    Imie {{  mother.firstName }} </br>
+			    Nazwisko {{  mother.secondName }} </br>
+			    Ile dzieci {{  mother.getChildrenCount }} </br>
+			    Ile punktow {{  mother.points }} </br>
+				</karina>
+</center>
+
+{% endblock %}
