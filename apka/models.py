@@ -8,7 +8,7 @@ class Mother(models.Model):
 	secondName = models.CharField(max_length=50)
 	age = models.IntegerField()
 	money = models.FloatField(default=0)
-	patoFace = models.ImageField(upload_to ='pic_folder/', default = 'pic_folder/no-img.jpg' )
+	patoFace = models.ImageField(upload_to ='', default = 'no-img.jpg' )
 	points = models.IntegerField(default=0)
 	
 	def __str__(self):
@@ -33,7 +33,7 @@ class Child(models.Model):
 	can500plus = models.BinaryField()
 	mother = models.ForeignKey(Mother, on_delete=models.PROTECT)
 	isAlive = models.BinaryField()
-	childrensFace = models.ImageField(upload_to ='pic_folder/', default = 'pic_folder/None/no-img.jpg' )
+	childrensFace = models.ImageField(upload_to ='pic_folder/', default = 'pic_folder/no-img.jpg' )
 
 	def __str__(self):
 		return self.firstName + " " + self.secondName
