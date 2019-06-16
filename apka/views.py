@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Mother
 from .models import Child
 
-def mothers_list(request):
+def action_list(request):
 	mothers = Mother.objects.filter().order_by('secondName')
-	return render (request, 'apka/mothers_list.html', {'mothers':mothers})
+	return render (request, 'apka/action_list.html', {'mothers':mothers})
 
 def mothers_rank(request):
 	mothers = Mother.objects.filter().order_by('points')[:10]
