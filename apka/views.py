@@ -31,24 +31,30 @@ def tindering(request):
 	return render(request, 'apka/tindering.html', {'tindering':tindering})
 
 def perform_action(request,id):
-	value = random.randrange(-1000,1000)
+	bonus = random.randrange(-1000,1000)
+	#idMother= request.session["idMother]
 	mother = get_object_or_404(Mother, id=11) #dopsiac pobieranie matki z sesji
-	print(value)
 	if id >= 100 and id < 200:
-		if value > 0:
-			action="Matka zadowolona. Mopsik dal: " + str(value) + ". Czas na balet!"
+		if bonus > 0:
+			action="Matka zadowolona. Mopsik dal: " + str(bonus) + ". Czas na balet!"
+			mother.points+=bonus
 		else:
-			action="Matka złorzeczy na wszechświat. Mops nic nie dał, musiała wydać " + str(value) + " na bombelka."
+			action="Matka złorzeczy na wszechświat. Mops nic nie dał, musiała wydać " + str(bonus) + " na bombelka."
+			mother.points+=bonus
 	elif id >= 200 and id < 300:
-		if value > 0:
-			action="Dano mateczce: " + str(value) + " na bułki, wedliny, wódeczkę itd"
+		if bonus > 0:
+			action="Dano mateczce: " + str(bonus) + " na bułki, wedliny, wódeczkę itd"
+			mother.points+=bonus
 		else:
 			action="Matka wkurwiona jak Wałęsa na Cenckiewicza. Baba z mopsu powiedziala, ze nic sie jej nie nalezy!"
+			mother.points+=bonus
 	elif id >=300 and id < 500:
-			if value > 0:
-				action="Donosik poszedł pryma sort. Osiągasz spełnienie jako matka. Dostajesz " + str(value) + " punktów."
+			if bonus > 0:
+				action="Donosik poszedł pryma sort. Osiągasz spełnienie jako matka. Dostajesz " + str(bonus) + " punktów."
+				mother.points+=bonus
 			else:
-				action ="Nie było komu donieść. Nie było kierownika. Smutek zabiera CI " + str(value) + " punktów."
+				action ="Nie było komu donieść. Nie było kierownika. Smutek zabiera Ci " + str(bonus) + " punktów."
+				mother.points+=bonus
 	else:
 		action ="ACTION NOT DEFINED YET"
 	return render(request, 'apka/action.html', {'action':action})
