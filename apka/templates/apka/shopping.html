@@ -1,0 +1,26 @@
+<!-- minify -->
+<link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+<!-- latest -->
+<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+<!-- core style only -->
+<link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+
+{% extends 'apka/template.html' %}
+
+{% block content %}
+</br>
+<center>
+<a href=/mopsing><span class="nes-text is-primary">MOPSING</span></a>
+<a href=/shopping><span class="nes-text is-error">SHOPPING</span></a>
+<a href=/clubbing><span class="nes-text is-success">CLUBBING</span></a>
+<a href=/tindering><span class="nes-text is-warning">TINDERING</span></a>
+</center>
+
+<div class="nes-container is-dark with-title">
+  <p class="title">SHOPPING</p>
+  <a href=/action/1105><p>Kup setkę czystej</p></a>
+  <a href=/action/1205><p>Kup 'vajseroje cienkie' </p>
+  <a href=/action/1305><p>Kce rozmawiac z kierownikiem</p></a>
+  <a href=/action/1405><p>Kup ciuszka bombelkowi</p></a>
+</div>
+{% endblock %}

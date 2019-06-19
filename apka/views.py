@@ -55,6 +55,34 @@ def perform_action(request,id):
 			else:
 				action ="Nie było komu donieść. Nie było kierownika. Smutek zabiera Ci " + str(bonus) + " punktów."
 				mother.points+=bonus
+	elif id >=1100 and id < 1200:
+		if bonus > 0:
+			action="Matka zadowolona. Ukradła setunię i " + str(bonus) + "ziko z kasy."
+			mother.points+=bonus
+		else:
+			action="Matka złorzeczy na wszechświat. Na alko wydala: " + str(bonus) + "."
+			mother.points+=bonus
+	elif id >=1200 and id<1300:
+		if bonus > 0:
+			action="Matka zadowolona. Ukradła fajurki i " + str(bonus) + " ziko z kasy."
+			mother.points+=bonus
+		else:
+			action="Matka złorzeczy na wszechświat. Na fajurki wydala: " + str(bonus) + "."
+			mother.points+=bonus
+	elif id >1300 and id <1400:
+		if bonus > 0:
+			action="Donosik poszedł pryma sort. Osiągasz spełnienie jako matka. Dostajesz " + str(bonus) + " punktów."
+			mother.points+=bonus
+		else:
+			action ="Nie było komu donieść. Nie było kierownika. Smutek zabiera Ci " + str(bonus) + " punktów."
+			mother.points+=bonus
+	elif id >=1400 and id < 1500:
+		if bonus > 0:
+			action="Matka zadowolona. Ukradła ciuszka i " + str(bonus) + " ziko z kasy."
+			mother.points+=bonus
+		else:
+			action="Matka złorzeczy na wszechświat. Na szmaty wydala: " + str(bonus) + "."
+			mother.points+=bonus
 	else:
 		action ="ACTION NOT DEFINED YET"
 	return render(request, 'apka/action.html', {'action':action})
